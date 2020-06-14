@@ -11,13 +11,7 @@ class MorseImageDecoder(object):
 							}
 
 
-		self.image = cv2.imread('images/morsecoa.jpg')
-		# self.image = cv2.imread('images/morsecok.jpg')
-		# self.image = cv2.imread('images/morsecoc.jpg')
-		# self.image = cv2.imread('images/morsecoe.jpg')
-		# self.image = cv2.imread('images/morsecof.jpg')
-		# self.image = cv2.imread('images/morsecoh.jpg')
-		# self.image = cv2.imread('images/morsecoj.jpg')
+		self.image = cv2.imread('morsecoa.jpg')
 		
 		self.finalData = []
 		self.changeSizeflag = 0
@@ -58,7 +52,7 @@ class MorseImageDecoder(object):
 		# cv2.waitKey(0)
 		# cv2.destroyAllWindows()
 
-		contour = cv2.findContours(erodeImage.copy(),cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)[1]
+		contour = cv2.findContours(erodeImage.copy(),cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)[0]
 		copyImage = np.zeros((self.image.shape[0],self.image.shape[1],3),dtype='uint8')
 		# cv2.drawContours(copyImage,contour,-1,(0,0,255),1)
 		# cv2.imshow('Con Image',copyImage)	
